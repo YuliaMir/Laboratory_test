@@ -1,0 +1,11 @@
+Project setup procedure:
+1. Take .env.dist file as an example and copy it to .env file where perform the following changes
+according to the local setup:
+
+BASE_URL=http://mail.ru
+DEFAULT_BROWSER=chrome
+DEFAULT_TOLERANCE=3
+WEBDRIVER_EXECUTOR=local
+WEBDRIVER_BASE_PATH=/test_project * - define the path to the drivers local folder
+
+2. Test was performed using credentials saved in config file.
