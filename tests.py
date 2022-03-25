@@ -9,5 +9,5 @@ def test_send_email(driver):
 
     inbox_page = InboxPage(driver)
     inbox_page.create_new_email()
-    inbox_page.send_email()
+
 

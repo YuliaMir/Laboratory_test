@@ -2,6 +2,8 @@ from selenium import common
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from importlib import import_module
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 
 
 class BasePage:
@@ -25,10 +27,11 @@ class BasePage:
         except common.exceptions.NoSuchElementException:
             raise AssertionError("Cant find element by locator: {}" . format(locator))
 
-    def click(self, locator:tuple):
+    def click(self, locator: tuple):
         element = self.element(locator)
         self.wait.until(EC.element_to_be_clickable(locator)).click()
         return element
+
 
     def switch_to_iframe(self, iframe):
         frame = self.element(iframe)
